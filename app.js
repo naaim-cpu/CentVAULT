@@ -1,5 +1,6 @@
 (() => {
   const DATA_ROOT = "data/";
+  const DATA_VERSION = "20260722-1933";
   const TARGET_COUNTS = {
     "Writing Banks": 9,
     "Peril Playbooks": 22,
@@ -43,7 +44,7 @@
   })[character]);
   const normalize = (value) => String(value ?? "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
   const compact = (value) => new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(value || 0);
-  const assetUrl = (name) => DATA_ROOT + String(name).split("/").map(encodeURIComponent).join("/");
+  const assetUrl = (name) => `${DATA_ROOT}${String(name).split("/").map(encodeURIComponent).join("/")}?v=${DATA_VERSION}`;
   const debounce = (callback, delay = 220) => {
     let timer;
     return (...arguments_) => {
