@@ -1,0 +1,49 @@
+.hidden {
+  display: none !important;
+}
+
+.vault-search button + kbd {
+  flex: none;
+}
+
+.desk-topbar .vault-search button {
+  line-height: 1;
+}
+
+.filter-row button.active {
+  color: #070707;
+  background: var(--lime);
+  border-color: var(--lime);
+}
+
+.category-grid button.active {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.reader-backdrop {
+  opacity: 1;
+}
+
+body.reader-open {
+  overflow: hidden;
+}
+
+.reader-body > .reader-loading,
+.reader-body > .reader-error {
+  padding: 80px 0;
+}
+
+.reader-outline nav button[hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .site-header .header-actions .button {
+    white-space: nowrap;
+  }
+
+  .vault-search kbd {
+    display: none;
+  }
+}
